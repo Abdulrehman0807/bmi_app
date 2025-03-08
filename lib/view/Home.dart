@@ -24,14 +24,14 @@ class _DashboardState extends State<Dashboard> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: bgColor,
-          title: Center(child: Text("BMI Result")),
+          title: const Center(child: Text("BMI Result")),
           content: Text(result),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text("OK"),
+              child: const Text("OK"),
             ),
           ],
         );
@@ -45,12 +45,12 @@ class _DashboardState extends State<Dashboard> {
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: height,
         width: width,
         child: PageView(
           controller: controller,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           onPageChanged: (value) {
             setState(() {
               index = value;
@@ -85,7 +85,7 @@ class _DashboardState extends State<Dashboard> {
                   Container(
                     height: height * 0.2,
                     width: width * 0.5,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage("images/bmi.png"),
@@ -127,7 +127,7 @@ class _DashboardState extends State<Dashboard> {
                 width: width,
                 color: Colors.white,
                 child: Center(
-                  child: Container(
+                  child: SizedBox(
                     width: width * 0.82,
                     child: Column(
                       children: [
@@ -152,13 +152,13 @@ class _DashboardState extends State<Dashboard> {
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          child: Container(
+                          child: SizedBox(
                             height: height * 0.06,
                             width: width * 0.8,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Container(
+                                SizedBox(
                                   height: height * 0.06,
                                   width: width * 0.45,
                                   child: Center(
@@ -172,7 +172,7 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   height: height * 0.06,
                                   width: width * 0.35,
                                   child: Row(
@@ -189,7 +189,7 @@ class _DashboardState extends State<Dashboard> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10)),
-                                          child: Container(
+                                          child: SizedBox(
                                             height: height * 0.05,
                                             width: width * 0.15,
                                             child: Icon(
@@ -212,7 +212,7 @@ class _DashboardState extends State<Dashboard> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10)),
-                                          child: Container(
+                                          child: SizedBox(
                                             height: height * 0.05,
                                             width: width * 0.15,
                                             child: Icon(
@@ -235,7 +235,7 @@ class _DashboardState extends State<Dashboard> {
                         SizedBox(height: height * 0.04),
                         TextField(
                           controller: wtController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               label: Text("Enter your weight (in Kgs)"),
                               prefixIcon: Icon(Icons.line_weight)),
                           keyboardType: TextInputType.number,
@@ -243,7 +243,7 @@ class _DashboardState extends State<Dashboard> {
                         SizedBox(height: height * 0.02),
                         TextField(
                           controller: ftController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               label: Text("Enter your Height (in Feet)"),
                               prefixIcon: Icon(Icons.height)),
                           keyboardType: TextInputType.number,
@@ -251,7 +251,7 @@ class _DashboardState extends State<Dashboard> {
                         SizedBox(height: height * 0.02),
                         TextField(
                           controller: inController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               label: Text("Enter your Height (in inch)"),
                               prefixIcon: Icon(Icons.height)),
                           keyboardType: TextInputType.number,

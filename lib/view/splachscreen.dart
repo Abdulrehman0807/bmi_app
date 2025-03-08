@@ -14,11 +14,11 @@ class _SplachScreenState extends State<SplachScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => Dashboard(),
+            builder: (context) => const Dashboard(),
           ));
     });
   }
@@ -33,7 +33,7 @@ class _SplachScreenState extends State<SplachScreen> {
       width: width,
       color: Colors.white,
       child: Center(
-        child: Container(
+        child: SizedBox(
           height: height * 0.3,
           width: width * 0.7,
           child: Column(
